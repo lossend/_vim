@@ -1,0 +1,5 @@
+plugged/
+node_modules/
+*.swap
+*.class
+*.pyc
