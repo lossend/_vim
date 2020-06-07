@@ -60,10 +60,10 @@ autocmd BufReadPost *
 
 
 " create directory if needed
-let s:backup_dir=g:_vim_tmp_dir.'/backup'
-let s:swap_dir=g:_vim_tmp_dir.'/swap'
-let s:undo_dir=g:_vim_tmp_dir.'/undo'
-let s:info_dir=g:_vim_tmp_dir.'/info'
+let s:backup_dir=g:_vim_tmp_dir.'/backup/'
+let s:swap_dir=g:_vim_tmp_dir.'/swap/'
+let s:undo_dir=g:_vim_tmp_dir.'/undo/'
+let s:info_dir=g:_vim_tmp_dir.'/info/'
 if !isdirectory(g:_vim_tmp_dir) && exists('*mkdir')
   call mkdir(g:_vim_tmp_dir)
 endif
@@ -92,7 +92,8 @@ set updatecount =100
 set undofile
 let &undodir     =s:undo_dir
 " viminfo files
-let &viminfo     ="'100,n".s:info_dir
+" exec "set viminfo     ='100,n".s:info_dir.'.viminfo'
+let &viminfo     ="'100,n".s:info_dir.'viminfo'
 set autochdir                " 设定文件浏览器目录为当前目录
 set foldmethod=syntax        " 选择代码折叠类型
 set foldlevel=100            " 禁止自动折叠
