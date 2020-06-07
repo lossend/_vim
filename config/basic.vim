@@ -6,7 +6,7 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-command! VimConfig execute 'edit $MYVIMRC' <bar>
+command! PlugConfig execute 'e  '.g:_vim_config_dir.'/plugin.vim'<bar>
 
 
 set gcr=a:blinkon0               "光标不闪动
@@ -60,36 +60,39 @@ autocmd BufReadPost *
 
 
 " create directory if needed
-if !isdirectory($HOME.'/._vim/tmp_dirs') && exists('*mkdir')
-  call mkdir($HOME.'/._vim/tmp_dirs')
+let s:backup_dir=g:_vim_tmp_dir.'/backup'
+let s:swap_dir=g:_vim_tmp_dir.'/swap'
+let s:undo_dir=g:_vim_tmp_dir.'/undo'
+let s:info_dir=g:_vim_tmp_dir.'/info'
+if !isdirectory(g:_vim_tmp_dir) && exists('*mkdir')
+  call mkdir(g:_vim_tmp_dir)
 endif
-if !isdirectory($HOME.'/._vim/tmp_dirs/backup') && exists('*mkdir')
-  call mkdir($HOME.'/._vim/tmp_dirs/backup')
+if !isdirectory(s:backup_dir) && exists('*mkdir')
+  call mkdir(s:backup_dir)
 endif
-if !isdirectory($HOME.'/._vim/tmp_dirs/swap') && exists('*mkdir')
-  call mkdir($HOME.'/._vim/tmp_dirs/swap')
+if !isdirectory(s:swap_dir) && exists('*mkdir')
+  call mkdir(s:swap_dir)
 endif
-if !isdirectory($HOME.'/._vim/tmp_dirs/undo') && exists('*mkdir')
-  call mkdir($HOME.'/._vim/tmp_dirs/undo')
+if !isdirectory(s:undo_dir) && exists('*mkdir')
+  call mkdir(s:undo_dir)
 endif
-if !isdirectory($HOME.'/._vim/tmp_dirs/info') && exists('*mkdir')
-  call mkdir($HOME.'/._vim/tmp_dirs/info')
+if !isdirectory(s:info_dir) && exists('*mkdir')
+  call mkdir(s:info_dir)
 endif
 
 " backup files
 set backup
-set backupdir   =$HOME/._vim/tmp_dirs/backup/
+let &backupdir   =s:backup_dir
 set backupext   =-vimbackup
 set backupskip  =
 " swap files
-set directory   =$HOME/._vim/tmp_dirs/swap/
+let &directory   =s:swap_dir
 set updatecount =100
 " undo files
 set undofile
-set undodir     =$HOME/._vim/tmp_dirs/undo/
+let &undodir     =s:undo_dir
 " viminfo files
-set viminfo     ='100,n$HOME/._vim/tmp_dirs/info/viminfo
-
+let &viminfo     ="'100,n".s:info_dir
 set autochdir                " 设定文件浏览器目录为当前目录
 set foldmethod=syntax        " 选择代码折叠类型
 set foldlevel=100            " 禁止自动折叠
