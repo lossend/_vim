@@ -1,0 +1,8 @@
+plugged/
+node_modules/
+*.swap
+*.swp
+*.swo
+*.viminfo
+*.class
+*.pyc
