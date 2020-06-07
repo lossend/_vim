@@ -20,9 +20,11 @@ call defx#custom#column('icon', {
       \ 'root_icon': ' ',
       \ })
 
-	call defx#custom#column('filename', {
-	      \ 'max_width': -90,
-	      \ })
+call defx#custom#column('filename', {
+    \ 'max_width': -90,
+    \ })
+
+nnoremap mm :Defx<cr>
 
 augroup vfinit
   au!
