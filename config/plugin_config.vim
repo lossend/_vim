@@ -2,12 +2,9 @@
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 
-" ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep --ignore-dir node_modules'
-endif
-nnoremap <Leader>a :Ack!<Space>
-noremap <Leader>w :Ack! <cword><cr>
+" fzf.vim
+nnoremap <Leader>r :Rg<Space>
+nnoremap <Leader>w :Rg <c-r><c-w><cr>
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 nnoremap <Leader>f :Files <space>

@@ -10,9 +10,10 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 Plug 'mhinz/vim-startify'
+Plug 'luochen1990/rainbow'
 " Motion
 Plug 'easymotion/vim-easymotion'
-Plug 'justinmk/vim-sneak'
+" Plug 'justinmk/vim-sneak'
 " git plug
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -20,16 +21,22 @@ Plug 'gregsexton/gitv', {'on': ['Gitv']}
 " airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Plug 'itchyny/lightline.vim'
 " tree tagbar
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 if has('nvim')
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/denite.nvim'
 else
     Plug 'Shougo/defx.nvim'
+    Plug 'Shougo/denite.nvim'
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
+Plug 't9md/vim-choosewin'
 Plug 'majutsushi/tagbar'
 Plug 'lvht/tagbar-markdown'
 Plug 'ryanoasis/vim-devicons'
@@ -37,21 +44,23 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " format comment 
+Plug 'Chiel92/vim-autoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/vim-easy-align'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'wellle/targets.vim'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
-Plug 'Chiel92/vim-autoformat'
 " complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " file search
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 Plug 'will133/vim-dirdiff'
 " synax check
 Plug 'w0rp/ale'
@@ -66,6 +75,9 @@ Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " front end
 Plug 'mattn/emmet-vim'
+Plug 'avim-css-color'
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
 " javascript
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
@@ -75,10 +87,14 @@ Plug 'moll/vim-node'
 
 " python
 Plug 'python-mode/python-mode'
+" rust
+Plug 'rust-lang/rust.vim'
+" go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" zoom
+Plug 'junegunn/goyo.vim'
+Plug 'amix/vim-zenroom2'
 " tex
 Plug 'lervag/vimtex'
-Plug 'junegunn/goyo.vim'
 "" Initialize plugin system
 call plug#end()
-
-

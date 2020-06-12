@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader = ' '
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -6,7 +6,9 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-command! PlugConfig execute 'e  '.g:_vim_config_dir.'/plugin.vim'<bar>
+command! PlugVim execute 'e  '.g:_vim_config_dir.'/plugin.vim'<bar>
+command! PlugBasic execute 'e  '.g:_vim_config_dir.'/base.vim'<bar>
+command! PlugBasic execute 'e  '.g:_vim_config_dir.'/base.vim'<bar>
 
 
 set gcr=a:blinkon0               "光标不闪动

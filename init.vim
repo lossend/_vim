@@ -15,7 +15,7 @@ for file in split(globpath(a:dir, "*.vim"), '\n')
 endfor
 endfunc
 
-call s:source_config("basic.vim")
+call s:source_config("base.vim")
 call s:source_config("plugin.vim")
 call s:source_config("plugin_config.vim")
 call s:source_config("extend.vim")
