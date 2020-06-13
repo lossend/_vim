@@ -19,9 +19,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/gitv', {'on': ['Gitv']}
 " airline
+" Plug 'itchyny/lightline.vim'
+" Plug 'mengelbrecht/lightline-bufferline'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'itchyny/lightline.vim'
 " tree tagbar
 " Plug 'preservim/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
