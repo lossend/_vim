@@ -17,7 +17,6 @@ endfunc
 
 call s:source_config("base.vim")
 call s:source_config("plugin.vim")
-call s:source_config("plugin_config.vim")
 call s:source_config("extend.vim")
 call s:source_dir(g:_vim_root_dir."/config/plugins")
 
