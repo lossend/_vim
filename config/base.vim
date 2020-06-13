@@ -6,9 +6,9 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-command! PlugVim execute 'e  '.g:_vim_config_dir.'/plugin.vim'<bar>
-command! BaseVim execute 'e  '.g:_vim_config_dir.'/base.vim'<bar>
-command! ExtendVim execute 'e  '.g:_vim_config_dir.'/extend.vim'<bar>
+command! VimPlug execute 'e  '.g:_vim_config_dir.'/plugin.vim'<bar>
+command! VimBase execute 'e  '.g:_vim_config_dir.'/base.vim'<bar>
+command! VimExtend execute 'e  '.g:_vim_config_dir.'/extend.vim'<bar>
 
 set gcr=a:blinkon0               "光标不闪动
 set background=dark
