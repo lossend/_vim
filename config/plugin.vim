@@ -27,10 +27,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 if has('nvim')
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/denite.nvim'
 else
     Plug 'Shougo/defx.nvim'
-    Plug 'Shougo/denite.nvim'
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif

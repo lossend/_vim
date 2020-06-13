@@ -39,7 +39,7 @@ augroup END
 " in this function, we should check if shell terminal still exists,
 " then close the terminal job before close vimfiler
 function! s:close_last_vimfiler_windows() abort
-  q
+  " q
 endfunction
 
 function! s:defx_init()
@@ -101,9 +101,9 @@ function! s:defx_init()
         \     defx#do_action('open_tree')
         \     )
         \ : defx#do_action('drop')
-  nnoremap <silent><buffer><expr> sg
-        \ defx#do_action('drop', 'vsplit')
   nnoremap <silent><buffer><expr> sv
+        \ defx#do_action('drop', 'vsplit')
+  nnoremap <silent><buffer><expr> ss
         \ defx#do_action('drop', 'split')
   nnoremap <silent><buffer><expr> st
         \ defx#do_action('drop', 'tabedit')

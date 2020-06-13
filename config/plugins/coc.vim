@@ -1,3 +1,17 @@
+let g:coc_global_extensions = [
+\ 'coc-ultisnips',
+\ 'coc-snippets',
+\ 'coc-json',
+\ 'coc-tsserver',
+\ 'coc-html',
+\ 'coc-css',
+\ 'coc-eslint',
+\ 'coc-tslint',
+\ 'coc-tabnine',
+\ 'coc-yaml',
+\ 'coc-java',
+\ 'coc-python',
+\ ]
 " Give more space for displaying messages.
 set cmdheight=2
 "
