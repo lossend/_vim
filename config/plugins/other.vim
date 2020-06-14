@@ -11,6 +11,6 @@ else
     let g:gitgutter_sign_column_always = 1
 endif
 " format
-noremap <F3> :Autoformat<CR>
+nnoremap <leader>af :Autoformat<CR>
 
 

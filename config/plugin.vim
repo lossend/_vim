@@ -74,7 +74,7 @@ Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " front end
 Plug 'mattn/emmet-vim'
-Plug 'avim-css-color'
+Plug 'ap/vim-css-color'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 " javascript
