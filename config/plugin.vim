@@ -35,6 +35,7 @@ else
 endif
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
+" Plug 'francoiscabrol/ranger.vim'
 Plug 't9md/vim-choosewin'
 Plug 'majutsushi/tagbar'
 Plug 'lvht/tagbar-markdown'
@@ -71,21 +72,22 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'flazz/vim-colorschemes'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
-Plug 'dracula/vim', { 'as': 'dracula' }
 " front end
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
 " javascript
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
+Plug 'ternjs/tern_for_vim'
 
 " python
-Plug 'python-mode/python-mode'
+" Plug 'python-mode/python-mode'
 " rust
 Plug 'rust-lang/rust.vim'
 " go
@@ -95,5 +97,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'amix/vim-zenroom2'
 " tex
 Plug 'lervag/vimtex'
+" repl
+Plug 'jpalardy/vim-slime'
+"
 "" Initialize plugin system
 call plug#end()

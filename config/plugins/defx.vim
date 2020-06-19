@@ -24,7 +24,8 @@ call defx#custom#column('filename', {
     \ 'max_width': -90,
     \ })
 
-nnoremap mm :Defx<cr>
+" nnoremap mm :Defx<cr>
+nnoremap mm :<C-u>Defx -toggle `fnamemodify(expand('<sfile>'), ':h:p')` -buffer-name=tab`tabpagenr()`<CR>
 
 augroup vfinit
   au!
@@ -33,12 +34,31 @@ augroup vfinit
   autocmd BufEnter * nested if
         \ (!has('vim_starting') && winnr('$') == 1  
         \ && &filetype ==# 'defx') |
-        \ call s:close_last_vimfiler_windows() | endif
+        \ call s:close_last_windows() | endif
+  " autocmd BufEnter * call s:open_defx_if_directory()
 augroup END
+
+function! s:open_defx_if_directory()
+  " This throws an error if the buffer name contains unusual characters like
+  " [[buffergator]]. Desired behavior in those scenarios is to consider the
+  " buffer not to be a directory.
+  try
+    let l:full_path = expand(expand('%:p'))
+  catch
+    return
+  endtry
+
+  " If the path is a directory, delete the (useless) buffer and open defx for
+  " that directory instead.
+  if isdirectory(l:full_path)
+    execute "Defx `expand('%:p')` | bd " . expand('%:r')
+  endif
+endfunction
 
 " in this function, we should check if shell terminal still exists,
 " then close the terminal job before close vimfiler
-function! s:close_last_vimfiler_windows() abort
+function! s:close_last_windows() abort
+    bdel
   " q
 endfunction
 
@@ -113,15 +133,14 @@ function! s:defx_init()
         \ defx#do_action('new_directory')
   nnoremap <silent><buffer><expr> N
         \ defx#do_action('new_file')
-  nnoremap <silent><buffer><expr> d
-        \ defx#do_action('remove')
+  nnoremap <silent><buffer><expr> dd
+        \ defx#do_action('remove_trash')
   nnoremap <silent><buffer><expr> r
         \ defx#do_action('rename')
   nnoremap <silent><buffer><expr> yy defx#do_action('call', 'DefxYarkPath')
   nnoremap <silent><buffer><expr> .
         \ defx#do_action('toggle_ignored_files')
-  nnoremap <silent><buffer><expr> ~
-        \ defx#do_action('cd')
+
   nnoremap <silent><buffer><expr> j
         \ line('.') == line('$') ? 'gg' : 'j'
   nnoremap <silent><buffer><expr> k
@@ -132,12 +151,20 @@ function! s:defx_init()
         \ defx#do_action('print')
   nnoremap <silent><buffer> <Home> :call cursor(2, 1)<cr>
   nnoremap <silent><buffer> <End>  :call cursor(line('$'), 1)<cr>
-  " nnoremap <silent><buffer><expr> <C-Home>
-  "      \ defx#do_action('cd', SpaceVim#plugins#projectmanager#current_root())
+
   nnoremap <silent><buffer><expr> > defx#do_action('resize',
               \ defx#get_context().winwidth + 5)
   nnoremap <silent><buffer><expr> < defx#do_action('resize',
               \ defx#get_context().winwidth - 5)
+
+	" Change directory
+	nnoremap <silent><buffer><expr><nowait> \  defx#do_action('cd', getcwd())
+	nnoremap <silent><buffer><expr> <BS>  defx#async_action('cd', ['..'])
+	nnoremap <silent><buffer><expr> ~     defx#async_action('cd')
+	nnoremap <silent><buffer><expr> u   defx#do_action('cd', ['..'])
+	nnoremap <silent><buffer><expr> 2u  defx#do_action('cd', ['../..'])
+	nnoremap <silent><buffer><expr> 3u  defx#do_action('cd', ['../../..'])
+	nnoremap <silent><buffer><expr> 4u  defx#do_action('cd', ['../../../..'])
 endf
 
 " in this function we should vim-choosewin if possible
