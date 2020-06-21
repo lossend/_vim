@@ -13,4 +13,4 @@ endif
 " format
 nnoremap <leader>af :Autoformat<CR>
 
-
+let g:rainbow_active = 1

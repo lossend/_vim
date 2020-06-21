@@ -74,7 +74,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 " front end
 Plug 'mattn/emmet-vim'
-Plug 'ap/vim-css-color'
+" Plug 'ap/vim-css-color'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
