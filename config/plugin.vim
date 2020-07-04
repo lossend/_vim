@@ -37,8 +37,10 @@ Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 " Plug 'francoiscabrol/ranger.vim'
 Plug 't9md/vim-choosewin'
-Plug 'majutsushi/tagbar'
-Plug 'lvht/tagbar-markdown'
+" Plug 'majutsushi/tagbar'
+" Plug 'lvht/tagbar-markdown'
+Plug 'liuchengxu/vista.vim'
+
 Plug 'ryanoasis/vim-devicons'
 " snippet
 Plug 'SirVer/ultisnips'
@@ -58,8 +60,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " file search
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary'   }
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh'  }
 " Plug 'mileszs/ack.vim'
 Plug 'will133/vim-dirdiff'
 " synax check
@@ -69,9 +73,10 @@ Plug 'terryma/vim-multiple-cursors'
 " tmux
 Plug 'christoomey/vim-tmux-navigator'
 " vim themes
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula'  }
 " front end
 Plug 'mattn/emmet-vim'
 " Plug 'ap/vim-css-color'

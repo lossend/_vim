@@ -11,6 +11,9 @@ let g:coc_global_extensions = [
 \ 'coc-yaml',
 \ 'coc-java',
 \ 'coc-python',
+\ 'coc-go',
+\ 'coc-clangd',
+\ 'coc-rust-analyzer',
 \ ]
 " Give more space for displaying messages.
 set cmdheight=2

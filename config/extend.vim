@@ -12,6 +12,7 @@ if has("gui_running")
 endif
 set guifont=MesloLGS\ NF:h12
 colorscheme gruvbox
+" colorscheme dracula
 
 " compile
 map <f4> :call CompileCode()<cr>
