@@ -97,13 +97,8 @@ Plug 'ternjs/tern_for_vim'
 Plug 'rust-lang/rust.vim'
 " go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" zoom
-Plug 'junegunn/goyo.vim'
-Plug 'amix/vim-zenroom2'
 " tex
 Plug 'lervag/vimtex'
-" repl
-Plug 'jpalardy/vim-slime'
 "
 "" Initialize plugin system
 call plug#end()

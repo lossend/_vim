@@ -113,3 +113,4 @@ source $VIMRUNTIME/menu.vim
 language messages en_US.utf-8
 set langmenu=en_US.UTF-8
 let $LANG ='en_US.UTF-8'
+let mapleader=","
