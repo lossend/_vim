@@ -6,6 +6,7 @@ endif
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
+let g:polyglot_disabled=[]
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
