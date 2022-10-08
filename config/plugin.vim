@@ -44,8 +44,8 @@ Plug 'liuchengxu/vista.vim'
 
 Plug 'ryanoasis/vim-devicons'
 " snippet
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 " format comment 
 Plug 'Chiel92/vim-autoformat'
 Plug 'sheerun/vim-polyglot'

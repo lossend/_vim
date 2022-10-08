@@ -1,2 +1,4 @@
 let g:EasyMotion_smartcase = 1
-nmap ss <Plug>(easymotion-s2)
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+nmap ss <Plug>(easymotion-overwin-f2)
